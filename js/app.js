@@ -1,6 +1,15 @@
 // constants--------------------------------------
-
-
+const winningCombos = [
+[0,1,2],
+[3,4,5],
+[6,7,8],
+[0,3,6],
+[1,4,7],
+[2,5,8],
+[2,4,6]
+[0,4,8]
+]
+// inspect allows us to see the each squares specific number
 
 
 //---------Variables(State)------------------
@@ -16,17 +25,18 @@ init()
 
 function init() {
 // allows us to change turns. after finishing add more need around 42 
-board = ['','X','','X','','','O','','']
+board = ['','','','','','','','','']
 turn = 'X'
-winner = true
-tie = false
+// false and true without the string makes it a boolean type
+winner = false;
+tie = false;
 render()
+// render updates the board based on the state based on users click.
 }
 //render displays the state of the game
 function render() {
 updateBoard()
 updateMessage()
-
 }
 function updateBoard() {
     //element inside the space squares
@@ -52,11 +62,15 @@ function updateBoard() {
     } // IF THERES A TIE
     else if (!winner && tie) {
         messageEl.textContent = 'game over'
-    // if theres a win
+    // if theres a winner
     } else {
         messageEl.textContent = `${turn} wins the game!`
 
     }
+}
+// handle function muse take into account a winner and tie.
+function handleClick(evt) { 
+console.log(evt.target)
 }
      // use backticks to make the shorcut instead of putting all 42 turns
         //render whos turn it is
@@ -64,3 +78,7 @@ function updateBoard() {
 
 
 //-------Event Listeners---------------
+// use a bubble to select the whole div class
+squareEls.forEach((squareEl) => {
+squareEl.addEventListener('click', handleClick)  
+})
