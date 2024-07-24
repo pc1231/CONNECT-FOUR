@@ -18,7 +18,7 @@ function init() {
 // allows us to change turns. after finishing add more need around 42 
 board = ['','X','','X','','','O','','']
 turn = 'X'
-winner = false
+winner = true
 tie = false
 render()
 }
@@ -52,9 +52,12 @@ function updateBoard() {
     } // IF THERES A TIE
     else if (!winner && tie) {
         messageEl.textContent = 'game over'
-    }
+    // if theres a win
+    } else {
+        messageEl.textContent = `${turn} wins the game!`
 
     }
+}
      // use backticks to make the shorcut instead of putting all 42 turns
         //render whos turn it is
       //  !winner = (winner === false)
