@@ -73,12 +73,19 @@ function handleClick(evt) {
 console.log(evt.target)
 //using parse int is better practice for numbers
 const squareIndex = parseInt(evt.target.id)
-console.log(squareIndex, typeof squareIndex );
+if (board[squareIndex] === 'X' || board[squareIndex] === 'O' ||
+    winner) {
+        return
+    }
+placePiece(squareIndex)
 }
      // use backticks to make the shorcut instead of putting all 42 turns
         //render whos turn it is
       //  !winner = (winner === false)
-
+    function placePiece(index) {
+        board[index] = turn
+        console.log(board)
+    }
 
 //-------Event Listeners---------------
 // use a bubble to select the whole div class
