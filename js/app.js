@@ -71,6 +71,9 @@ function updateBoard() {
 // handle function muse take into account a winner and tie.
 function handleClick(evt) { 
 console.log(evt.target)
+//using parse int is better practice for numbers
+const squareIndex = parseInt(evt.target.id)
+console.log(squareIndex, typeof squareIndex );
 }
      // use backticks to make the shorcut instead of putting all 42 turns
         //render whos turn it is
