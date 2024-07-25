@@ -75,9 +75,13 @@ console.log(evt.target)
 const squareIndex = parseInt(evt.target.id)
 if (board[squareIndex] === 'X' || board[squareIndex] === 'O' ||
     winner) {
-        return
+    return
     }
 placePiece(squareIndex)
+
+ // checking for winner ()
+ checkForWinner()
+ console.log(winner)
 }
      // use backticks to make the shorcut instead of putting all 42 turns
         //render whos turn it is
@@ -85,6 +89,22 @@ placePiece(squareIndex)
     function placePiece(index) {
         board[index] = turn
         console.log(board)
+    } 
+    // we need 42 check for winner condition for connect four.
+    function checkForWinner() {
+      if (
+      (board[0] !== '' && board[0] === board[1] && board[0] === board[2]) ||
+        (board[3] !== '' && board[3] === board[4] && board[3] === board[5]) ||
+        (board[6] !== '' && board[6] === board[7] && board[6] === board[8]) ||
+        (board[0] !== '' && board[0] === board[3] && board[0] === board[6]) ||
+        (board[1] !== '' && board[1] === board[4] && board[1] === board[7]) ||
+        (board[2] !== '' && board[2] === board[5] && board[2] === board[8]) ||
+        (board[0] !== '' && board[0] === board[4] && board[0] === board[8]) ||
+        (board[2] !== '' && board[2] === board[4] && board[2] === board[6])
+      )
+      {
+      winner = true  
+      }  
     }
 
 //-------Event Listeners---------------
