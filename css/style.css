@@ -3,18 +3,21 @@ body {
   /* Use a system font, if none are available use an available sans-sarif */
   font-family: system-ui, sans-serif;
   margin: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .board {
   display: flex;
   flex-wrap: wrap;
-  width: 300px;
+  width: 300px; 
 }
-
-.sqr {
-  width: 30%;
+.sqr 
+{  
+ width: 14.2%;
   aspect-ratio: 1/1;
   border: 3px solid black;
-  font-size: 64px;
+  font-size: 48px;
   text-align: center;
 }

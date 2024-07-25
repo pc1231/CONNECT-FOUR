@@ -1,16 +1,15 @@
 // constants--------------------------------------
-const winningCombos = [
-[0,1,2],
-[3,4,5],
-[6,7,8],
-[0,3,6],
-[1,4,7],
-[2,5,8],
-[2,4,6],
-[0,4,8]
-]
+    const winningCombos = [
+        // Horizontal
+        [0, 1, 2, 3], [1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6],
+        [7, 8, 9, 10], [8, 9, 10, 11], [9, 10, 11, 12], [10, 11, 12, 13],
+        [14, 15, 16, 17], [15, 16, 17, 18], [16, 17, 18, 19], [17, 18, 19, 20],
+        [21, 22, 23, 24], [22, 23, 24, 25], [23, 24, 25, 26], [24, 25, 26, 27],
+        [28, 29, 30, 31], [29, 30, 31, 32], [30, 31, 32, 33], [31, 32, 33, 34],
+        [35, 36, 37, 38], [36, 37, 38, 39], [37, 38, 39, 40], [38, 39, 40, 41]
+      ];
+      
 // inspect allows us to see the each squares specific number
-
 //---------Variables(State)------------------
 let board, turn, winner, tie
 
@@ -25,7 +24,9 @@ init()
 
 function init() {
 // allows us to change turns. after finishing add more need around 42 
-board = ['','','','','','','','','']
+board = ['','','','','','','','','','','','','','','',
+'','','','','','','','','','','','',
+'','','','','','','','','','','','','','','',]
 turn = 'X'
 // false and true without the string makes it a boolean type
 winner = false;
@@ -61,7 +62,7 @@ function updateBoard() {
         messageEl.textContent = `It is ${turn}'s turn`
     } // IF THERES A TIE
     else if (!winner && tie) {
-        messageEl.textContent = 'game over'
+        messageEl.textContent = 'No Winner '
     // if theres a winner
     } else {
         messageEl.textContent = `${turn} wins the game!`
