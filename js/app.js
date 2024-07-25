@@ -6,20 +6,20 @@ const winningCombos = [
 [0,3,6],
 [1,4,7],
 [2,5,8],
-[2,4,6]
+[2,4,6],
 [0,4,8]
 ]
 // inspect allows us to see the each squares specific number
 
-
 //---------Variables(State)------------------
 let board, turn, winner, tie
-
 
 // Cached Element References
 const squareEls = document.querySelectorAll('.sqr')
 const messageEl = document.getElementById('message')
-
+// reset
+const resetBtnEl = document.getElementById('reset')
+console.log(resetBtnEl);
 //------Functions--------------
 init()
 
@@ -70,7 +70,7 @@ function updateBoard() {
 }
 // handle function muse take into account a winner and tie.
 function handleClick(evt) { 
-console.log(evt.target)
+
 //using parse int is better practice for numbers
 const squareIndex = parseInt(evt.target.id)
 if (board[squareIndex] === 'X' || board[squareIndex] === 'O' ||
@@ -89,13 +89,11 @@ placePiece(squareIndex)
         //render whos turn it is
       //  !winner = (winner === false)
     function placePiece(index) {
-        board[index] = turn
-        console.log(board)
+        board[index] = turn   
     } 
     // we need 42 check for winner condition for connect four.
     function checkForWinner() {
-      if (
-      (board[0] !== '' && board[0] === board[1] && board[0] === board[2]) ||
+    if ((board[0] !== '' && board[0] === board[1] && board[0] === board[2]) ||
         (board[3] !== '' && board[3] === board[4] && board[3] === board[5]) ||
         (board[6] !== '' && board[6] === board[7] && board[6] === board[8]) ||
         (board[0] !== '' && board[0] === board[3] && board[0] === board[6]) ||
@@ -114,7 +112,7 @@ placePiece(squareIndex)
     return
     }
     // board wont stop checking for a tie
- if (board.includes('')) {
+ if (!board.includes('')) {
     tie = true
  }
 }
@@ -122,7 +120,7 @@ function switchPlayerTurn() {
    if(winner) {
     return
    } 
-   if (turn = 'X') {
+   if (turn === 'X') {
     turn = 'O'
    } else {
    turn ='X'
@@ -135,3 +133,4 @@ function switchPlayerTurn() {
 squareEls.forEach((squareEl) => {
 squareEl.addEventListener('click', handleClick)  
 })
+resetBtnEl.addEventListener('click', init)
