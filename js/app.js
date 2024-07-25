@@ -81,7 +81,8 @@ placePiece(squareIndex)
 
  // checking for winner ()
  checkForWinner()
- console.log(winner)
+ checkForTie()
+ switchPlayerTurn()
  render()
 }
      // use backticks to make the shorcut instead of putting all 42 turns
@@ -107,7 +108,28 @@ placePiece(squareIndex)
       winner = true  
       }  
     }
+    //  checking for tie function
+    function checkForTie() {
+    if (winner) {
+    return
+    }
+    // board wont stop checking for a tie
+ if (board.includes('')) {
+    tie = true
+ }
+}
+function switchPlayerTurn() {
+   if(winner) {
+    return
+   } 
+   if (turn = 'X') {
+    turn = 'O'
+   } else {
+   turn ='X'
+    }
+    // turn = turn ==='X' ? 'O' : 'X'
 
+}
 //-------Event Listeners---------------
 // use a bubble to select the whole div class
 squareEls.forEach((squareEl) => {
