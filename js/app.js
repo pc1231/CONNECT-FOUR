@@ -82,6 +82,7 @@ placePiece(squareIndex)
  // checking for winner ()
  checkForWinner()
  console.log(winner)
+ render()
 }
      // use backticks to make the shorcut instead of putting all 42 turns
         //render whos turn it is
