@@ -37,4 +37,10 @@ The winning combinations to win the game are in order from horizontal to vertica
 ## Motivation
 Motivation:
 	My passion for the game is actually what inspired me to create it. My home is inhabited by a sizable family. With our parents, there were perhaps eight of us kids. Our ages were all between 18 and 4. There was only one game that permitted players of such a wide age range to interact with one another. It was a Connect Four game. There was a lot of excitement between us, whether it was beating my little sibling or my older brother. Everyone was able to take part, which made for enjoyable family time spent by all age groups. As I was studying, I made the decision to challenge myself to make the most enjoyable and simple to comprehend for all age groups and build this game.
- ###
+ 
+ ### Technologies Used
+- HTML
+- JavaScript
+- CSS
+- Git and GitHub
+
