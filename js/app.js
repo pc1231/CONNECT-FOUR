@@ -135,8 +135,38 @@ function checkForWinner() {
       (board[37] && board[37] === board[38] && board[37] === board[39] && board[37] === board[40]) ||
       (board[38] && board[38] === board[39] && board[38] === board[40] && board[38] === board[41]) ||
         // vertical combinations
-        // column 1 
-        (board[0] && board[0] === board[6] && board[0] === board[12] && board[0] === board[18])
+        // column 0 
+        (board[0] && board[0] === board[6] && board[0] === board[12] && board[0] === board[18]) ||
+    (board[6] && board[6] === board[12] && board[6] === board[18] && board[6] === board[24]) ||
+    (board[12] && board[12] === board[18] && board[12] === board[24] && board[12] === board[30]) ||
+     // column 1
+    (board[1] && board[1] === board[7] && board[1] === board[13] && board[1] === board[19]) ||
+    (board[7] && board[7] === board[13] && board[7] === board[19] && board[7] === board[25]) ||
+    (board[13] && board[13] === board[19] && board[13] === board[25] && board[13] === board[31]) ||
+     // column 2
+    (board[2] && board[2] === board[8] && board[2] === board[14] && board[2] === board[20]) ||
+    (board[8] && board[8] === board[14] && board[8] === board[20] && board[8] === board[26]) ||
+    (board[14] && board[14] === board[20] && board[14] === board[26] && board[14] === board[32]) ||
+   //  column 3
+    (board[3] && board[3] === board[9] && board[3] === board[15] && board[3] === board[21]) ||
+    (board[9] && board[9] === board[15] && board[9] === board[21] && board[9] === board[27]) ||
+    (board[15] && board[15] === board[21] && board[15] === board[27] && board[15] === board[33]) ||
+    // colum 4
+    (board[4] && board[4] === board[10] && board[4] === board[16] && board[4] === board[22]) ||
+    (board[10] && board[10] === board[16] && board[10] === board[22] && board[10] === board[28]) ||
+    (board[16] && board[16] === board[22] && board[16] === board[28] && board[16] === board[34]) ||
+    // column 5
+    (board[5] && board[5] === board[11] && board[5] === board[17] && board[5] === board[23]) ||
+    (board[11] && board[11] === board[17] && board[11] === board[23] && board[11] === board[29]) ||
+    (board[17] && board[17] === board[23] && board[17] === board[29] && board[17] === board[35]) ||
+    // colum 6
+    (board[18] && board[18] === board[24] && board[18] === board[30] && board[18] === board[36]) ||
+    (board[19] && board[19] === board[25] && board[19] === board[31] && board[19] === board[37]) ||
+    (board[20] && board[20] === board[26] && board[20] === board[32] && board[20] === board[38]) ||
+ // colum 7
+    (board[21] && board[21] === board[27] && board[21] === board[33] && board[21] === board[39]) ||
+    (board[22] && board[22] === board[28] && board[22] === board[34] && board[22] === board[40]) ||
+    (board[23] && board[23] === board[29] && board[23] === board[35] && board[23] === board[41])
     ) {
       winner = true;
     }
