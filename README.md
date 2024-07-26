@@ -1,5 +1,5 @@
 ## Connect Four Game 🔴🔵
-![Screenshot](./README/screenshot.png)
+![Screenshot](./README/Screenshot.png)
 
 ## Overview
 Connect Four is a classic two-player game where players take turns dropping colored discs into a 7 column by 6 rows table.
