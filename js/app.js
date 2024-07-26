@@ -16,8 +16,8 @@ const winningCombos = [
     [4, 10, 16, 22], [10, 16, 22, 28], [16, 22, 28, 34],
     [5, 11, 17, 23], [11, 17, 23, 29], [17, 23, 29, 35],
     [18, 24, 30, 36], [19, 25, 31, 37], [20, 26, 32, 38],
-    [21, 27, 33, 39], [22, 28, 34, 40], [23, 29, 35, 41]
-  ];
+    [21, 27, 33, 39], [22, 28, 34, 40], [23, 29, 35, 41],
+]
 // inspect allows us to see the each squares specific number
 //---------Variables(State)------------------
 let board, turn, winner, tie
@@ -166,8 +166,10 @@ function checkForWinner() {
  // colum 7
     (board[21] && board[21] === board[27] && board[21] === board[33] && board[21] === board[39]) ||
     (board[22] && board[22] === board[28] && board[22] === board[34] && board[22] === board[40]) ||
-    (board[23] && board[23] === board[29] && board[23] === board[35] && board[23] === board[41])
-    ) {
+    (board[23] && board[23] === board[29] && board[23] === board[35] && board[23] === board[41]) ||
+    // slanted combos
+    (board[18] && board[18] === board[13] && board[18] === board[8] && board[18] === board[3]) 
+) {
       winner = true;
     }
   }
