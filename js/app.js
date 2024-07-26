@@ -74,11 +74,11 @@ function updateBoard() {
 // function else if that allows for turns
 board.forEach((cell, idx) => {  
 if (cell === 'X') {
- squareEls[idx].textContent = '🔴'
- // use this to make the choices change color 
- // make for connect four 
- squareEls[idx].style.backgroundColor = 'red'
- } else if (cell === 'O') {
+squareEls[idx].textContent = '🔴'
+// use this to make the choices change color 
+// make for connect four 
+squareEls[idx].style.backgroundColor = 'red'
+} else if (cell === 'O') {
 squareEls[idx].textContent = '🔵'
 squareEls[idx].style.backgroundColor = 'blue'
 } else { 
@@ -234,8 +234,6 @@ turn = 'O'
 } else {
 turn ='X'
 }
-// turn = turn ==='X' ? 'O' : 'X'
-
 }
 //-------Event Listeners---------------
 // use a bubble to select the whole div class
