@@ -8,6 +8,16 @@ const winningCombos = [
     [24, 25, 26, 27], [25, 26, 27, 28], [26, 27, 28, 29],
     [30, 31, 32, 33], [31, 32, 33, 34], [32, 33, 34, 35],
     [36, 37, 38, 39], [37, 38, 39, 40], [38, 39, 40, 41],
+    // vertical combinations
+    [0, 6, 12, 18], [6, 12, 18, 24], [12, 18, 24, 30],
+    [1, 7, 13, 19], [7, 13, 19, 25], [13, 19, 25, 31],
+    [2, 8, 14, 20], [8, 14, 20, 26], [14, 20, 26, 32],
+    [3, 9, 15, 21], [9, 15, 21, 27], [15, 21, 27, 33],
+    [4, 10, 16, 22], [10, 16, 22, 28], [16, 22, 28, 34],
+    [5, 11, 17, 23], [11, 17, 23, 29], [17, 23, 29, 35],
+    [18, 24, 30, 36], [19, 25, 31, 37], [20, 26, 32, 38],
+    [21, 27, 33, 39], [22, 28, 34, 40], [23, 29, 35, 41]
+  ];
 ];
 // inspect allows us to see the each squares specific number
 //---------Variables(State)------------------
@@ -101,32 +111,26 @@ function checkForWinner() {
       (board[0] && board[0] === board[1] && board[0] === board[2] && board[0] === board[3]) ||
       (board[1] && board[1] === board[2] && board[1] === board[3] && board[1] === board[4]) ||
       (board[2] && board[2] === board[3] && board[2] === board[4] && board[2] === board[5]) ||
-  
       // Row 2
       (board[6] && board[6] === board[7] && board[6] === board[8] && board[6] === board[9]) ||
       (board[7] && board[7] === board[8] && board[7] === board[9] && board[7] === board[10]) ||
       (board[8] && board[8] === board[9] && board[8] === board[10] && board[8] === board[11]) ||
-  
       // Row 3
       (board[12] && board[12] === board[13] && board[12] === board[14] && board[12] === board[15]) ||
       (board[13] && board[13] === board[14] && board[13] === board[15] && board[13] === board[16]) ||
       (board[14] && board[14] === board[15] && board[14] === board[16] && board[14] === board[17]) ||
-  
       // Row 4
       (board[18] && board[18] === board[19] && board[18] === board[20] && board[18] === board[21]) ||
       (board[19] && board[19] === board[20] && board[19] === board[21] && board[19] === board[22]) ||
       (board[20] && board[20] === board[21] && board[20] === board[22] && board[20] === board[23]) ||
-  
       // Row 5
       (board[24] && board[24] === board[25] && board[24] === board[26] && board[24] === board[27]) ||
       (board[25] && board[25] === board[26] && board[25] === board[27] && board[25] === board[28]) ||
       (board[26] && board[26] === board[27] && board[26] === board[28] && board[26] === board[29]) ||
-  
       // Row 6
       (board[30] && board[30] === board[31] && board[30] === board[32] && board[30] === board[33]) ||
       (board[31] && board[31] === board[32] && board[31] === board[33] && board[31] === board[34]) ||
       (board[32] && board[32] === board[33] && board[32] === board[34] && board[32] === board[35]) ||
-  
       // Row 7
       (board[36] && board[36] === board[37] && board[36] === board[38] && board[36] === board[39]) ||
       (board[37] && board[37] === board[38] && board[37] === board[39] && board[37] === board[40]) ||
