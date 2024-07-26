@@ -43,6 +43,9 @@ Motivation:
 - JavaScript
 - CSS
 - Git and GitHub
+## Planning Materials
+[Planning Materials](https://docs.google.com/document/d/11jyY4j7Vdj1NDrF25JkGD28lRDYABW26yv0P4a4rJBc/edit?usp=sharing)
+
 ## Credits
 
 - [Colors](https://coolors.co) - Used for really amazing and super specific color palettes
