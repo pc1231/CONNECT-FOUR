@@ -70,35 +70,35 @@ updateBoard()
 updateMessage()
 }
 function updateBoard() {
-    //element inside the space squares
-    // function else if that allows for turns
-    board.forEach((cell, idx) => {  
-            if (cell === 'X') {
+//element inside the space squares
+// function else if that allows for turns
+board.forEach((cell, idx) => {  
+if (cell === 'X') {
  squareEls[idx].textContent = 'X'
  // use this to make the choices change color 
  // make for connect four 
  //squareEls[idx].style.backgroundColor = 'red'
-        } else if (cell === 'O') {
-       squareEls[idx].textContent = 'O'
-      // squareEls[idx].style.backgroundColor = 'blue'
-        } else { 
-            squareEls[idx].textContent = ''
-            squareEls[idx].style.backgroundColor = 'White'
-        }   
-    })
+ } else if (cell === 'O') {
+squareEls[idx].textContent = 'O'
+  // squareEls[idx].style.backgroundColor = 'blue'
+} else { 
+squareEls[idx].textContent = ''
+squareEls[idx].style.backgroundColor = 'White'
+}   
+})
 }
-   function updateMessage() {
-    if (!winner &&!tie) {
-        messageEl.textContent = `It is ${turn}'s turn`
-    } 
-    // IF THERES A TIE
-    else if (!winner && tie) {
-        messageEl.textContent = 'No Winner '
-    // if theres a winner
-    } else {
-        messageEl.textContent = `${turn} wins the game!`
+function updateMessage() {
+if (!winner &&!tie) {
+messageEl.textContent = `It is ${turn}'s turn`
+} 
+// IF THERES A TIE
+else if (!winner && tie) {
+messageEl.textContent = 'No Winner '
+// if theres a winner
+} else {
+messageEl.textContent = `${turn} wins the game!`
 
-    }
+}
 }
 // handle function muse take into account a winner and tie.
 function handleClick(evt) { 
@@ -106,135 +106,135 @@ function handleClick(evt) {
 //using parse int is better practice for numbers
 const squareIndex = parseInt(evt.target.id)
 if (board[squareIndex] === 'X' || board[squareIndex] === 'O' ||
-    winner) {
-    return
-    }
+winner) {
+return
+}
 placePiece(squareIndex)
 
- // checking for winner ()
+// checking for winner ()
  checkForWinner()
  checkForTie()
  switchPlayerTurn()
  render()
 }
-     // use backticks to make the shorcut instead of putting all 42 turns
-        //render whos turn it is
-      //  !winner = (winner === false)
-    function placePiece(index) {
-        board[index] = turn   
-    } 
-    // we need 42 check for winner condition for connect four.
+// use backticks to make the shorcut instead of putting all 42 turns
+//render whos turn it is
+//  !winner = (winner === false)
+function placePiece(index) {
+board[index] = turn   
+} 
+ // we need 42 check for winner condition for connect four.
     
 function checkForWinner() {
-    // Hard-coding horizontal winning combinations
-    if (
-      // Row 1
-      (board[0] && board[0] === board[1] && board[0] === board[2] && board[0] === board[3]) ||
-      (board[1] && board[1] === board[2] && board[1] === board[3] && board[1] === board[4]) ||
-      (board[2] && board[2] === board[3] && board[2] === board[4] && board[2] === board[5]) ||
-      // Row 2
-      (board[6] && board[6] === board[7] && board[6] === board[8] && board[6] === board[9]) ||
-      (board[7] && board[7] === board[8] && board[7] === board[9] && board[7] === board[10]) ||
-      (board[8] && board[8] === board[9] && board[8] === board[10] && board[8] === board[11]) ||
-      // Row 3
-      (board[12] && board[12] === board[13] && board[12] === board[14] && board[12] === board[15]) ||
-      (board[13] && board[13] === board[14] && board[13] === board[15] && board[13] === board[16]) ||
-      (board[14] && board[14] === board[15] && board[14] === board[16] && board[14] === board[17]) ||
-      // Row 4
-      (board[18] && board[18] === board[19] && board[18] === board[20] && board[18] === board[21]) ||
-      (board[19] && board[19] === board[20] && board[19] === board[21] && board[19] === board[22]) ||
-      (board[20] && board[20] === board[21] && board[20] === board[22] && board[20] === board[23]) ||
-      // Row 5
-      (board[24] && board[24] === board[25] && board[24] === board[26] && board[24] === board[27]) ||
-      (board[25] && board[25] === board[26] && board[25] === board[27] && board[25] === board[28]) ||
-      (board[26] && board[26] === board[27] && board[26] === board[28] && board[26] === board[29]) ||
-      // Row 6
-      (board[30] && board[30] === board[31] && board[30] === board[32] && board[30] === board[33]) ||
-      (board[31] && board[31] === board[32] && board[31] === board[33] && board[31] === board[34]) ||
-      (board[32] && board[32] === board[33] && board[32] === board[34] && board[32] === board[35]) ||
-      // Row 7
-      (board[36] && board[36] === board[37] && board[36] === board[38] && board[36] === board[39]) ||
-      (board[37] && board[37] === board[38] && board[37] === board[39] && board[37] === board[40]) ||
-      (board[38] && board[38] === board[39] && board[38] === board[40] && board[38] === board[41]) ||
-        // vertical combinations
-        // column 0 
-        (board[0] && board[0] === board[6] && board[0] === board[12] && board[0] === board[18]) ||
-    (board[6] && board[6] === board[12] && board[6] === board[18] && board[6] === board[24]) ||
-    (board[12] && board[12] === board[18] && board[12] === board[24] && board[12] === board[30]) ||
-     // column 1
-    (board[1] && board[1] === board[7] && board[1] === board[13] && board[1] === board[19]) ||
-    (board[7] && board[7] === board[13] && board[7] === board[19] && board[7] === board[25]) ||
-    (board[13] && board[13] === board[19] && board[13] === board[25] && board[13] === board[31]) ||
-     // column 2
-    (board[2] && board[2] === board[8] && board[2] === board[14] && board[2] === board[20]) ||
-    (board[8] && board[8] === board[14] && board[8] === board[20] && board[8] === board[26]) ||
-    (board[14] && board[14] === board[20] && board[14] === board[26] && board[14] === board[32]) ||
-   //  column 3
-    (board[3] && board[3] === board[9] && board[3] === board[15] && board[3] === board[21]) ||
-    (board[9] && board[9] === board[15] && board[9] === board[21] && board[9] === board[27]) ||
-    (board[15] && board[15] === board[21] && board[15] === board[27] && board[15] === board[33]) ||
-    // colum 4
-    (board[4] && board[4] === board[10] && board[4] === board[16] && board[4] === board[22]) ||
-    (board[10] && board[10] === board[16] && board[10] === board[22] && board[10] === board[28]) ||
-    (board[16] && board[16] === board[22] && board[16] === board[28] && board[16] === board[34]) ||
-    // column 5
-    (board[5] && board[5] === board[11] && board[5] === board[17] && board[5] === board[23]) ||
-    (board[11] && board[11] === board[17] && board[11] === board[23] && board[11] === board[29]) ||
-    (board[17] && board[17] === board[23] && board[17] === board[29] && board[17] === board[35]) ||
+// Hard-coding horizontal winning combinations
+if (
+// Row 1
+(board[0] && board[0] === board[1] && board[0] === board[2] && board[0] === board[3]) ||
+(board[1] && board[1] === board[2] && board[1] === board[3] && board[1] === board[4]) ||
+(board[2] && board[2] === board[3] && board[2] === board[4] && board[2] === board[5]) ||
+// Row 2
+(board[6] && board[6] === board[7] && board[6] === board[8] && board[6] === board[9]) ||
+(board[7] && board[7] === board[8] && board[7] === board[9] && board[7] === board[10]) ||
+(board[8] && board[8] === board[9] && board[8] === board[10] && board[8] === board[11]) ||
+// Row 3
+(board[12] && board[12] === board[13] && board[12] === board[14] && board[12] === board[15]) ||
+(board[13] && board[13] === board[14] && board[13] === board[15] && board[13] === board[16]) ||
+(board[14] && board[14] === board[15] && board[14] === board[16] && board[14] === board[17]) ||
+// Row 4
+(board[18] && board[18] === board[19] && board[18] === board[20] && board[18] === board[21]) ||
+(board[19] && board[19] === board[20] && board[19] === board[21] && board[19] === board[22]) ||
+(board[20] && board[20] === board[21] && board[20] === board[22] && board[20] === board[23]) ||
+// Row 5
+(board[24] && board[24] === board[25] && board[24] === board[26] && board[24] === board[27]) ||
+(board[25] && board[25] === board[26] && board[25] === board[27] && board[25] === board[28]) ||
+(board[26] && board[26] === board[27] && board[26] === board[28] && board[26] === board[29]) ||
+ // Row 6
+(board[30] && board[30] === board[31] && board[30] === board[32] && board[30] === board[33]) ||
+(board[31] && board[31] === board[32] && board[31] === board[33] && board[31] === board[34]) ||
+(board[32] && board[32] === board[33] && board[32] === board[34] && board[32] === board[35]) ||
+// Row 7
+(board[36] && board[36] === board[37] && board[36] === board[38] && board[36] === board[39]) ||
+(board[37] && board[37] === board[38] && board[37] === board[39] && board[37] === board[40]) ||
+(board[38] && board[38] === board[39] && board[38] === board[40] && board[38] === board[41]) ||
+// vertical combinations
+// column 0 
+(board[0] && board[0] === board[6] && board[0] === board[12] && board[0] === board[18]) ||
+(board[6] && board[6] === board[12] && board[6] === board[18] && board[6] === board[24]) ||
+(board[12] && board[12] === board[18] && board[12] === board[24] && board[12] === board[30]) ||
+ // column 1
+(board[1] && board[1] === board[7] && board[1] === board[13] && board[1] === board[19]) ||
+(board[7] && board[7] === board[13] && board[7] === board[19] && board[7] === board[25]) ||
+(board[13] && board[13] === board[19] && board[13] === board[25] && board[13] === board[31]) ||
+// column 2
+(board[2] && board[2] === board[8] && board[2] === board[14] && board[2] === board[20]) ||
+(board[8] && board[8] === board[14] && board[8] === board[20] && board[8] === board[26]) ||
+(board[14] && board[14] === board[20] && board[14] === board[26] && board[14] === board[32]) ||
+//  column 3
+(board[3] && board[3] === board[9] && board[3] === board[15] && board[3] === board[21]) ||
+(board[9] && board[9] === board[15] && board[9] === board[21] && board[9] === board[27]) ||
+(board[15] && board[15] === board[21] && board[15] === board[27] && board[15] === board[33]) ||
+// colum 4
+(board[4] && board[4] === board[10] && board[4] === board[16] && board[4] === board[22]) ||
+(board[10] && board[10] === board[16] && board[10] === board[22] && board[10] === board[28]) ||
+(board[16] && board[16] === board[22] && board[16] === board[28] && board[16] === board[34]) ||
+// column 5
+(board[5] && board[5] === board[11] && board[5] === board[17] && board[5] === board[23]) ||
+(board[11] && board[11] === board[17] && board[11] === board[23] && board[11] === board[29]) ||
+(board[17] && board[17] === board[23] && board[17] === board[29] && board[17] === board[35]) ||
     // colum 6
-    (board[18] && board[18] === board[24] && board[18] === board[30] && board[18] === board[36]) ||
-    (board[19] && board[19] === board[25] && board[19] === board[31] && board[19] === board[37]) ||
-    (board[20] && board[20] === board[26] && board[20] === board[32] && board[20] === board[38]) ||
+(board[18] && board[18] === board[24] && board[18] === board[30] && board[18] === board[36]) ||
+(board[19] && board[19] === board[25] && board[19] === board[31] && board[19] === board[37]) ||
+(board[20] && board[20] === board[26] && board[20] === board[32] && board[20] === board[38]) ||
  // colum 7
-    (board[21] && board[21] === board[27] && board[21] === board[33] && board[21] === board[39]) ||
-    (board[22] && board[22] === board[28] && board[22] === board[34] && board[22] === board[40]) ||
-    (board[23] && board[23] === board[29] && board[23] === board[35] && board[23] === board[41]) ||
-    // slanted combos
-    (board[18] && board[18] === board[13] && board[18] === board[8] && board[18] === board[3]) ||
-    (board[19] && board[19] === board[14] && board[19] === board[9] && board[19] === board[4]) ||
-    (board[20] && board[20] === board[15] && board[20] === board[10] && board[20] === board[5]) ||
-    (board[24] && board[24] === board[19] && board[24] === board[14] && board[24] === board[9]) ||
-    (board[25] && board[25] === board[20] && board[25] === board[15] && board[25] === board[10]) ||
-    (board[26] && board[26] === board[21] && board[26] === board[16] && board[26] === board[11]) ||
-    (board[30] && board[30] === board[25] && board[30] === board[20] && board[30] === board[15]) ||
-    (board[31] && board[31] === board[26] && board[31] === board[21] && board[31] === board[16]) ||
-    (board[32] && board[32] === board[27] && board[32] === board[22] && board[32] === board[17]) ||
-    (board[0] && board[0] === board[7] && board[0] === board[14] && board[0] === board[21]) ||
-    (board[1] && board[1] === board[8] && board[1] === board[15] && board[1] === board[22]) ||
-    (board[2] && board[2] === board[9] && board[2] === board[16] && board[2] === board[23]) ||
-    (board[6] && board[6] === board[13] && board[6] === board[20] && board[6] === board[27]) ||
-    (board[7] && board[7] === board[14] && board[7] === board[21] && board[7] === board[28]) ||
-    (board[8] && board[8] === board[15] && board[8] === board[22] && board[8] === board[29]) ||
-    (board[12] && board[12] === board[19] && board[12] === board[26] && board[12] === board[33]) ||
-    (board[13] && board[13] === board[20] && board[13] === board[27] && board[13] === board[34]) ||
-    (board[14] && board[14] === board[21] && board[14] === board[28] && board[14] === board[35]) ||
-    (board[18] && board[18] === board[25] && board[18] === board[32] && board[18] === board[39]) ||
-    (board[19] && board[19] === board[26] && board[19] === board[33] && board[19] === board[40]) ||
-    (board[20] && board[20] === board[27] && board[20] === board[34] && board[20] === board[41])
+(board[21] && board[21] === board[27] && board[21] === board[33] && board[21] === board[39]) ||
+(board[22] && board[22] === board[28] && board[22] === board[34] && board[22] === board[40]) ||
+(board[23] && board[23] === board[29] && board[23] === board[35] && board[23] === board[41]) ||
+// slanted combos
+(board[18] && board[18] === board[13] && board[18] === board[8] && board[18] === board[3]) ||
+(board[19] && board[19] === board[14] && board[19] === board[9] && board[19] === board[4]) ||
+(board[20] && board[20] === board[15] && board[20] === board[10] && board[20] === board[5]) ||
+(board[24] && board[24] === board[19] && board[24] === board[14] && board[24] === board[9]) ||
+(board[25] && board[25] === board[20] && board[25] === board[15] && board[25] === board[10]) ||
+(board[26] && board[26] === board[21] && board[26] === board[16] && board[26] === board[11]) ||
+(board[30] && board[30] === board[25] && board[30] === board[20] && board[30] === board[15]) ||
+(board[31] && board[31] === board[26] && board[31] === board[21] && board[31] === board[16]) ||
+(board[32] && board[32] === board[27] && board[32] === board[22] && board[32] === board[17]) ||
+(board[0] && board[0] === board[7] && board[0] === board[14] && board[0] === board[21]) ||
+(board[1] && board[1] === board[8] && board[1] === board[15] && board[1] === board[22]) ||
+(board[2] && board[2] === board[9] && board[2] === board[16] && board[2] === board[23]) ||
+(board[6] && board[6] === board[13] && board[6] === board[20] && board[6] === board[27]) ||
+(board[7] && board[7] === board[14] && board[7] === board[21] && board[7] === board[28]) ||
+(board[8] && board[8] === board[15] && board[8] === board[22] && board[8] === board[29]) ||
+(board[12] && board[12] === board[19] && board[12] === board[26] && board[12] === board[33]) ||
+(board[13] && board[13] === board[20] && board[13] === board[27] && board[13] === board[34]) ||
+(board[14] && board[14] === board[21] && board[14] === board[28] && board[14] === board[35]) ||
+(board[18] && board[18] === board[25] && board[18] === board[32] && board[18] === board[39]) ||
+(board[19] && board[19] === board[26] && board[19] === board[33] && board[19] === board[40]) ||
+(board[20] && board[20] === board[27] && board[20] === board[34] && board[20] === board[41])
 ) {
-      winner = true;
-    }
-  }
-    //  checking for tie function
-    function checkForTie() {
-    if (winner) {
-    return
-    }
-    // board wont stop checking for a tie
- if (!board.includes('')) {
-    tie = true
+winner = true;
+}
+}
+//  checking for tie function
+function checkForTie() {
+if (winner) {
+return
+}
+// board wont stop checking for a tie
+if (!board.includes('')) {
+tie = true
  }
 }
 function switchPlayerTurn() {
-   if(winner) {
-    return
-   } 
-   if (turn === 'X') {
-    turn = 'O'
-   } else {
-   turn ='X'
-    }
-    // turn = turn ==='X' ? 'O' : 'X'
+if(winner) {
+return
+} 
+if (turn === 'X') {
+turn = 'O'
+} else {
+turn ='X'
+}
+// turn = turn ==='X' ? 'O' : 'X'
 
 }
 //-------Event Listeners---------------
