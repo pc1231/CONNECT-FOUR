@@ -74,12 +74,12 @@ function updateBoard() {
 // function else if that allows for turns
 board.forEach((cell, idx) => {  
 if (cell === 'X') {
- squareEls[idx].textContent = 'X'
+ squareEls[idx].textContent = '🔴'
  // use this to make the choices change color 
  // make for connect four 
  squareEls[idx].style.backgroundColor = 'red'
  } else if (cell === 'O') {
-squareEls[idx].textContent = 'O'
+squareEls[idx].textContent = '🔵'
 squareEls[idx].style.backgroundColor = 'blue'
 } else { 
 squareEls[idx].textContent = ''
@@ -89,14 +89,14 @@ squareEls[idx].style.backgroundColor = 'White'
 }
 function updateMessage() {
 if (!winner &&!tie) {
-messageEl.textContent = `It is ${turn}'s turn`
+messageEl.textContent = `It is ${turn === 'X' ? '🔴' : '🔵'}'s turn`
 } 
 // IF THERES A TIE
 else if (!winner && tie) {
 messageEl.textContent = 'No Winner '
 // if theres a winner
 } else {
-messageEl.textContent = `${turn} wins the game!`
+messageEl.textContent = `${turn === 'X' ? '🔴' : '🔵'} wins the game!`
 
 }
 }
