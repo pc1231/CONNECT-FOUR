@@ -43,7 +43,18 @@ Motivation:
 - JavaScript
 - CSS
 - Git and GitHub
-### Credits
+## Credits
 
 - [Colors](https://coolors.co) - Used for really amazing and super specific color palettes
+## To-Dos and Goals
 
+#### To-Dos
+
+- Customize the circles with a little more flare
+- Add animation like for example when you click the blue or red circle drops into the slot like you're playing the actual game
+- Add sounds when you win or tie
+- Also add sound when the animation drops into place.
+
+#### Goals
+
+- To make the game feel just like how it is in real life.
