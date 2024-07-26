@@ -13,13 +13,13 @@ body {
 .board {
   display: flex;
   flex-wrap: wrap;
-  width: 300px; 
+  width: 450px; 
 }
 .sqr 
 {  
  width: 14.2%;
   aspect-ratio: 1/1;
   border: 3px solid black;
-  font-size: 48px;
+  font-size: 1px;
   text-align: center;
 }
