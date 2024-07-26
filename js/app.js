@@ -18,7 +18,6 @@ const winningCombos = [
     [18, 24, 30, 36], [19, 25, 31, 37], [20, 26, 32, 38],
     [21, 27, 33, 39], [22, 28, 34, 40], [23, 29, 35, 41]
   ];
-];
 // inspect allows us to see the each squares specific number
 //---------Variables(State)------------------
 let board, turn, winner, tie
@@ -134,7 +133,10 @@ function checkForWinner() {
       // Row 7
       (board[36] && board[36] === board[37] && board[36] === board[38] && board[36] === board[39]) ||
       (board[37] && board[37] === board[38] && board[37] === board[39] && board[37] === board[40]) ||
-      (board[38] && board[38] === board[39] && board[38] === board[40] && board[38] === board[41])
+      (board[38] && board[38] === board[39] && board[38] === board[40] && board[38] === board[41]) ||
+        // vertical combinations
+        // column 1 
+        (board[0] && board[0] === board[6] && board[0] === board[12] && board[0] === board[18])
     ) {
       winner = true;
     }
