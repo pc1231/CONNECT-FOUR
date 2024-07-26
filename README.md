@@ -43,4 +43,7 @@ Motivation:
 - JavaScript
 - CSS
 - Git and GitHub
+### Credits
+
+- [Colors](https://coolors.co) - Used for really amazing and super specific color palettes
 
