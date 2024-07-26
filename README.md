@@ -1,7 +1,9 @@
-# Connect Four Game 🔴🔵
+## Connect Four Game 🔴🔵
+![Screenshot](./README/screenshot.png)
 
 ## Overview
 Connect Four is a classic two-player game where players take turns dropping colored discs into a 7 column by 6 rows table.
+
 
 ## How the Game works
 - The goal is to be the first to connect four of your circles horizontally, vertically, or diagonally.
