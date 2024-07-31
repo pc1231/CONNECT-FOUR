@@ -93,7 +93,7 @@ function placePiece(column) {
         const index = row * 7 + column;
         if (board[index] === '') {
             board[index] = turn;
-            return; // Return once the piece is placed
+            return; 
         }
     }
 }
@@ -103,7 +103,7 @@ function checkForWinner() {
         const [a, b, c, d] = combo;
         if (board[a] && board[a] === board[b] && board[a] === board[c] && board[a] === board[d]) {
             winner = true;
-            return; // Stop further checking once a winner is found
+            return; 
         }
     }
 }
