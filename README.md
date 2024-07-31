@@ -30,7 +30,8 @@ Motivation:
 [Planning Materials](https://docs.google.com/document/d/11jyY4j7Vdj1NDrF25JkGD28lRDYABW26yv0P4a4rJBc/edit?usp=sharing)
 
 ## Attibutions
-Image from[Amazon](https://m.media-amazon.com/images/S/aplus-media-library-service-media/0a5390a0-fbcf-4142-a7ae-54cd2f3e1866.__CR0,0,970,300_PT0_SX970_V1___.jpg.
+Logo pulled from
+[Amazon](https://m.media-amazon.com/images/S/aplus-media-library-service-media/0a5390a0-fbcf-4142-a7ae-54cd2f3e1866.__CR0,0,970,300_PT0_SX970_V1___.jpg)
 ## To-Dos and Goals
 
 #### To-Dos
